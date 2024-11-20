@@ -45,23 +45,27 @@ class LongLists {
     }
     
     public static void main(String[] args) {
+	int n = 1000;
 	for (String s : args) {
 	    switch(s) {
 	    case "--sample":
 		System.out.println("range(1,5) = " + toString(range(1,5)));
-		System.out.println("range(1,1000) = " + toString(range(1,1000)));
+		System.out.println("range(1," + n + ") = " + toString(range(1,n)));
+		break;
+	    case "--more":
+		n *= 10;
 		break;
 	    case "--length":
 		{
-		    Node list = range(1,100000);
-		    System.out.print("recursiveLength(range(1,100000)) = ");
+		    Node list = range(1,n);
+		    System.out.print("recursiveLength(range(1,"+n+")) = ");
 		    System.out.println(recursiveLength(list));
 		}
 		break;
 	    case "--tailLength":
 		{
-		    Node list = range(1,100000);
-		    System.out.print("tailRecursiveLength(range(1,100000)) = ");
+		    Node list = range(1,n);
+		    System.out.print("tailRecursiveLength(range(1,"+n+")) = ");
 		    System.out.println(tailRecursiveLength(list,0));
 		}
 		break;
